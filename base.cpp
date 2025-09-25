@@ -18,7 +18,7 @@ HRESULT __stdcall hkPresent(IDXGISwapChain *pSwapChain, UINT SyncInterval, UINT 
 {
     if (!pDevice)
     {
-        // İlk çağrıda cihaz ve context al
+      
         DXGI_SWAP_CHAIN_DESC sd;
         pSwapChain->GetDesc(&sd);
         pSwapChain->GetDevice(__uuidof(ID3D11Device), (void **)&pDevice);
@@ -34,7 +34,7 @@ HRESULT __stdcall hkPresent(IDXGISwapChain *pSwapChain, UINT SyncInterval, UINT 
         }
     }
 
-    return oPresent(pSwapChain, SyncInterval, Flags); // Orijinal fonksiyonu çağır
+    return oPresent(pSwapChain, SyncInterval, Flags);
 }
 
 DWORD_PTR *GetVTable(void *instance, size_t offset = 0)
@@ -103,4 +103,5 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD ul_reason, LPVOID)
     }
     return TRUE;
 }
+
 
