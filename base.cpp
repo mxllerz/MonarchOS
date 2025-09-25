@@ -44,7 +44,7 @@ DWORD_PTR *GetVTable(void *instance, size_t offset = 0)
 
 void Hook()
 {
-    // Geçici bir pencere ve DX11 cihazı oluştur
+    //  DX11 
     WNDCLASSEX wc = {
         sizeof(WNDCLASSEX), CS_CLASSDC, DefWindowProc,
         0L, 0L, GetModuleHandle(NULL), NULL, NULL, NULL, NULL,
@@ -103,3 +103,4 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD ul_reason, LPVOID)
     }
     return TRUE;
 }
+
